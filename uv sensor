@@ -63,9 +63,11 @@ def force_measure(bus):
 def get_UV_LSB(bus): 
      UV_data = 0x2C  #aux_data0/uvindex0, stores LSB of UV reading
      raw_uv_LSB = bus.read_word_data(UV_SENSOR_ADDR, UV_data)
-     print("UV reading: " + str(raw_uv_LSB))
      
      uv_read = raw_uv_LSB / 100 # converting from lux to UV  
+     print("UV reading: " + str(uv_read))
+     
+     
      
      return uv_read
 
